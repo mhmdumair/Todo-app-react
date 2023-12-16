@@ -1,13 +1,140 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+	--header-color:#c0392b;
+}
+header{
+    background-color: var(--header-color);
+	padding: 20px;
+	font-size: 25px;
+	color: #fff;
+}
+footer{
+    background-color: var(--header-color);
+	padding: 10px 20px;
+	color: #fff;
+	font-size: 16px;
+}
+body{
+ 	width: 100vw;
+ 	height: 100vh;
+ 	display: flex;
+ 	align-items: center;
+ 	justify-content: center;
+	color: #333;
+}
+.container{
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	font-size: 30px;
+	border: 1px solid black;
+	max-width: 400px;
+	min-width: 400px;
+	max-height: 600px;
+	border-radius: 35px;
+	overflow: hidden;
+}
+main{
+	flex: 1;
+	background: #fff;
+}
+.item{
+	text-align: left;
+	width: 100%;
+	display: inline-flex;
+	align-items: center;
+	background-color: #ddd;
+	padding: 10px 20px;
+	border-radius: 5px;
+	margin: 10px;
+}
+.item label{
+	flex: 1;
+	margin-left: 20px;
+	user-select: none;
+}
+.content{
+	padding: 5%;
+	font-size: 20px;
+	overflow: scroll;
+}
+.item .delete{
+	width: 20px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	color: #333;
+}
+.item .delete:focus,
+.item .delete:hover{
+	color: red;
+}
+.item .delete:active{
+	transform: scale(1.1);
+}
+.item input[type="checkbox"]{
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	/* display: inline-block; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.addItem{
+	width: 100%;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 7%;
+	color: #333;
+	background: #ddd;
+}
+.addItem input,.search{
+	flex: 1;
+	margin: 0 10px;
+	border: 1px solid #777;
+	padding: 7px;
+	border-radius: 25px;
+}
+.search{
+	width: 80%;
+	margin: 0 10%;
+	outline: 0;
+}
+.search-box{
+	background: #ddd;
+	padding-bottom: 10px;
+}
+.addItem button{
+	padding: 7px;
+	border-radius: 50%;
+	border: none;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.addItem button:active{
+	transform: scale(1.1);
+	
+}
+.addItem button:hover,
+.addItem button:focus{
+	background-color: black;
+	color: #fff;
+}
+
+@media screen and (max-width:400px) {
+	.container{
+		min-width: unset;
+	}
+	.addItem label{
+		display: none;
+	}
+	.content{
+		font-size: 16px;
+	}
 }

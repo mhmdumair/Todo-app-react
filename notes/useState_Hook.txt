@@ -1,0 +1,48 @@
+import React from 'react'
+import { useState } from 'react';
+
+function Content(){
+
+    function rand(){
+        let arr=["Grow","Earn","Gain some"]
+        let index=Math.floor(Math.random()*3);
+        setData(arr[index])
+    }
+
+    const [data,setData]=useState('Earn') 
+    // function clickEvent(e){
+    //     console.log(e)
+    // }
+    // function myEvent(name){
+    //     console.log(`You are Subscribed ${name}`)
+    // }
+
+    const [count,setCount] =useState(99)
+    function increment(){
+        // setCount(count+1)
+        setCount((prevCount)=>{return prevCount+1})
+    }
+    function deccrement(){
+        setCount(count-1)
+    }
+
+    return (
+        // <main>
+        //     <h1 onDoubleClick={()=>{myEvent("Sadik")}}>Let's {rand()} Money</h1>
+        //     {/* Yuo cant just pass parameters like clickEvent("Umair") 
+        //     becouse this will execute befor you click it*/}
+        //     <button onClick={()=>myEvent("Umair")}>Subscribe</button>
+        //     <button onClick={clickEvent}>Event</button>
+        // </main>
+
+        <main className='content'>
+            <p>Let's {data} Money</p>
+            <button onClick={()=>rand()}>Subscribe</button><br></br>
+            <button onClick={()=>{deccrement()}}>-</button>
+            <span>{count}</span>
+            <button onClick={()=>{increment()}}>+</button>
+        </main>
+    )
+}
+
+export default Content
